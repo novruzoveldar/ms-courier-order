@@ -1,0 +1,64 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.7'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.guavapay'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2021.0.1")
+}
+
+dependencies {
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
+	implementation group: 'org.springframework.security', name: 'spring-security-web', version: '5.6.3'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.6.3'
+	annotationProcessor group: 'org.mapstruct', name: 'mapstruct', version: '1.4.2.Final'
+	annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.4.2.Final'
+	implementation group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.4.2.Final'
+	implementation group: 'org.mapstruct', name: 'mapstruct-jdk8', version: '1.4.2.Final'
+	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.4.2.Final'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.6.6'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.6.6'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.6.5'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc'
+	implementation group: 'org.postgresql', name: 'postgresql'
+	implementation group: 'com.zaxxer', name: 'HikariCP', version: '3.3.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	annotationProcessor group:  'org.projectlombok', name: 'lombok-mapstruct-binding', version: '0.2.0'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+	testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+	testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+	implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '2.3.2'
+	implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.3.2'
+	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
+	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
+	implementation group: 'org.redisson', name: 'redisson', version: '3.16.7'
+	implementation group: 'io.github.openfeign', name: 'feign-annotation-error-decoder', version: '11.8'
+	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-feign', version: '1.4.7.RELEASE'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.3.2'
+	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.1.1'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

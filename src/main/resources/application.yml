@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ms-courier-order
+  cloud:
+    config:
+      profile: native
+      uri: http://localhost:8888
+  main:
+    allow-bean-definition-overriding: true
