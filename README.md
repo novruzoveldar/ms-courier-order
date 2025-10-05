@@ -290,6 +290,6 @@ Response: `AllOrderHistoryDto` for the assigned order
 ## License & Author
 
 This repository includes an `LICENSE` file — the project is licensed under the terms provided there.
-Author / contact: Eldar R. Novruzov [eldarnovruzov99@gmail.com](mailto:eldarnovruzov99@gmail.com)
+Author / contact: Eldar R. Novruzov
 
 ---
