@@ -1,7 +1,5 @@
 # ms-courier-order
 
----
-
 ## Table of Contents
 
 * [About](#about)
